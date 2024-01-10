@@ -79,16 +79,22 @@ public class BinaryTree {
 
         while (!nodes.isEmpty()) {
 
-            Node node = nodes.remove();
+            // Get the number of nodes at the current level
+            int levelNum = nodes.size();
 
-            visit(node.value);
+            // Iterate over the number of nodes at the current level
+            for (int i = 0; i < levelNum; i++) {
+                Node node = nodes.remove();
 
-            if (node.left != null) {
-                nodes.add(node.left);
-            }
+                visit(node.value);
 
-            if (node.right != null) {
-                nodes.add(node.right);
+                if (node.left != null) {
+                    nodes.add(node.left);
+                }
+
+                if (node.right != null) {
+                    nodes.add(node.right);
+                }
             }
         }
     }

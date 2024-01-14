@@ -46,7 +46,7 @@ public class Graph {
 
     ArrayList<String> depthFirstSearch(Node start) {
         ArrayList<Node> visited = new ArrayList<>();
-        Deque<Node> stack = new LinkedList<>();
+        Deque<Node> stack = new ArrayDeque<>();
         stack.add(start);
 
         while (!stack.isEmpty()) {

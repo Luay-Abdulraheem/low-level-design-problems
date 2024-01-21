@@ -31,7 +31,7 @@ public class CacheLRU {
     }
 
     public void display() {
-        cache.stream().collect(Collectors.toCollection(LinkedList::new))
+        new LinkedList<>(cache)
                 .descendingIterator()
                 .forEachRemaining(System.out::println);
     }
